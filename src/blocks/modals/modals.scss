@@ -1,3 +1,4 @@
+$foundry: 'Foundry Monoline OT3 W08';
 .modal {
   $comp: &;
   position: fixed;
@@ -8,11 +9,27 @@
 
   width: 100vw;
 
-  display: none;
+  display: block;
   align-items: center;
   justify-content: center;
 
   overflow: hidden;
+
+  &__test {
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
   &.is-open {
     display: flex;
@@ -142,58 +159,58 @@
 
 // появление/исчезание оверлея
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
+  from {
+    opacity: 0;
   }
-  to { 
-    opacity: 1; 
+  to {
+    opacity: 1;
   }
 }
 @keyframes fadeOut {
-  from { 
-    opacity: 1; 
+  from {
+    opacity: 1;
   }
-  to { 
-    opacity: 0; 
+  to {
+    opacity: 0;
   }
 }
 
-// появление/исчезание модалки через opacity 
+// появление/исчезание модалки через opacity
 @keyframes slideIn {
-  from { 
+  from {
     transform: translateY(15%);
-    opacity: 0; 
+    opacity: 0;
   }
-  to { 
-    transform: translateY(0); 
+  to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes slideOut {
-  from { 
+  from {
     transform: translateY(0);
     opacity: 1;
   }
-  to { 
-    transform: translateY(-10%); 
+  to {
+    transform: translateY(-10%);
     opacity: 0;
   }
 }
 
 // появление/исчезание модалки справа
 @keyframes slideInRight {
-  from { 
+  from {
     transform: translateX(110%);
   }
-  to { 
-    transform: translateX(0); 
+  to {
+    transform: translateX(0);
   }
 }
 @keyframes slideOutRight {
-  from { 
+  from {
     transform: translateX(0);
   }
-  to { 
-    transform: translateX(110%); 
+  to {
+    transform: translateX(110%);
   }
 }

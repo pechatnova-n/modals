@@ -12,3 +12,28 @@
   font-display: swap;
   src: url('../fonts/ttroundsneue-regular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Foundry Monoline OT3 W08';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/Foundry Monoline OT3 W08 Bold") format("woff2");
+
+}
+
+@font-face {
+  font-family: 'Foundry Monoline OT3 W08';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Foundry Monoline OT3 W08 Medium") format("woff2");
+}
+
+@font-face {
+  font-family: 'Foundry Monoline OT3 W08';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Foundry Monoline OT3 W08 BdItl") format("woff2");
+}
