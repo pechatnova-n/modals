@@ -15,12 +15,7 @@ mixin test-modal
     .modal__layout(data-modal-layout='')
       .modal__wrapper
         .modal__test
-          h2.modal__title кабинет дилера
-          p.modal__text Для получения данных входа обратитесь к своему персональному менеджеру.
-          form.modal__form
-          a.modal__bid(href="#")
-
-
+          |CONTENT
         .modal__close(data-modal-close='')
           +reset.modal__svg
 
@@ -28,6 +23,35 @@ mixin empty-modal
   .modal(id='default-modal')
     .modal__overlay(data-modal-close='')
     .modal__layout(data-modal-layout='')
+
+
+mixin login-modal
+  .modal(id='login-modal')
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+      .modal__wrapper
+        .modal__content
+          header.modal__title кабинет дилера
+            p.modal__text Для получения данных входа обратитесь к своему персональному менеджеру.
+          form.modal__form
+            .modal__item
+              input.modal__input#inp-tel(type="tel", required)
+              label.modal__label(for="inp-tel") телефон
+                span.modal__star *
+              span.modal__inp-reset
+                +inp-reset
+            .modal__item
+              input.modal__input#inp-passw(type="password", required)
+              label.modal__label(for="inp-passw") пароль
+                span.modal__star *
+              span.modal__inp-show
+                +inp-show
+            button.modal__submit(type="submit") войти
+            a.modal__recover(href="#") Забыли пароль?
+          a.modal__bid(href="#") заявка на дилерство
+
+        .modal__close(data-modal-close='')
+          +inp-reset
 
 
 

@@ -13,27 +13,27 @@
   src: url('../fonts/ttroundsneue-regular.woff') format('woff');
 }
 
+
 @font-face {
   font-family: 'Foundry Monoline OT3 W08';
+  src: url("../fonts/Foundry Monoline OT3 W08 Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("../fonts/Foundry Monoline OT3 W08 Bold") format("woff2");
-
 }
 
 @font-face {
   font-family: 'Foundry Monoline OT3 W08';
+  src: url("../fonts/Foundry Monoline OT3 W08 Medium.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/Foundry Monoline OT3 W08 Medium") format("woff2");
 }
 
 @font-face {
   font-family: 'Foundry Monoline OT3 W08';
-  font-style: normal;
-  font-weight: 400;
+  src: url("../fonts/FoundryMonolineOT3W08-BdIta.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 800;
   font-display: swap;
-  src: url("../fonts/Foundry Monoline OT3 W08 BdItl") format("woff2");
 }
