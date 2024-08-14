@@ -25,7 +25,7 @@ mixin empty-modal
     .modal__layout(data-modal-layout='')
 
 
-mixin login-modal
+mixin login-modal 
   .modal(id='login-modal')
     .modal__overlay(data-modal-close='')
     .modal__layout(data-modal-layout='')
@@ -51,11 +51,14 @@ mixin login-modal
             button.modal__submit(type="submit") войти
             a.modal__recover(href="#") Забыли пароль?
           a.modal__bid(href="#") заявка на дилерство
+        .modal__close(data-modal-close='')
+          +inp-reset
 
-          hr
-          hr
-          hr
+        hr
+        hr
+        hr
 
+      
         .modal__content
           header.modal__title кабинет дилера
             p.modal__text Для получения данных входа обратитесь к своему персональному менеджеру.
@@ -78,8 +81,16 @@ mixin login-modal
             button.modal__submit(type="submit") войти
             a.modal__recover(href="#") Забыли пароль?
           a.modal__bid(href="#") заявка на дилерство
+        .modal__close(data-modal-close='')
+          +inp-reset
+  
 
 
+mixin tel-modal
+  .modal(id='tel-modal')
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+      .modal__wrapper        
         .modal__content
           header.modal__title Подтвердите номер телефона
             p.modal__text.modal__text_padding Сейчас вы получите код на номер + 7 981 ***-**-22
@@ -90,15 +101,16 @@ mixin login-modal
                 span.modal__star *
               span.modal__inp-reset
                 +inp-reset
-
-
             button.modal__submit(type="submit") войти
             p.modal__about-code Отправим код повторно через 45 секунд
             span.modal__where-code не приходит код
               +question
 
+        hr
+        hr
+        hr
 
-
+      
         .modal__content
           header.modal__title Подтвердите номер телефона
             p.modal__text.modal__text_padding Сейчас вы получите код на номер + 7 981 ***-**-22
@@ -109,13 +121,22 @@ mixin login-modal
                 span.modal__star *
               span.modal__inp-reset
                 +inp-reset
-
-
             button.modal__submit(type="submit") далее
             p.modal__about-code Отправим код повторно через 45 секунд
             span.modal__where-code не приходит код
               +question
+        .modal__close(data-modal-close='')
+          +inp-reset
+        .modal__return(data-modal-close='')
+          +arrow-left
 
+
+
+mixin recover-password-modal
+  .modal(id='recover-password-modal')
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+      .modal__wrapper
         .modal__content
           header.modal__title Восстановление пароля
             p.modal__text Если вы забыли пароль, введите номер телефона
@@ -130,6 +151,11 @@ mixin login-modal
             p.modal__oferta Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю
               a.modal__policy(href="#") условия политики конфиденциальности.
 
+        hr
+        hr
+        hr
+
+      
         .modal__content
           header.modal__title Восстановление пароля
             p.modal__text Если вы забыли пароль, введите номер телефона
@@ -145,6 +171,11 @@ mixin login-modal
             p.modal__oferta Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю
               a.modal__policy(href="#") условия политики конфиденциальности.
 
+        hr
+        hr
+        hr
+
+      
         .modal__content
           header.modal__title Восстановление пароля
           form.modal__form
@@ -167,21 +198,28 @@ mixin login-modal
             button.modal__submit(type="submit") изменить пароль
             p.modal__oferta Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю
               a.modal__policy(href="#") условия политики конфиденциальности.
+        .modal__close(data-modal-close='')
+          +inp-reset
+ 
 
 
+
+
+mixin success-modal
+  .modal(id='success-modal')
+    .modal__overlay(data-modal-close='')
+    .modal__layout(data-modal-layout='')
+      .modal__wrapper
         .modal__content
           +picture('ic-success.png').modal__ic-success
           header.modal__title.modal__title_success Ваш пароль успешно изменен
             p.modal__text Теперь вы можете использовать новый пароль для входа
             button.modal__submit.modal__submit_alone(type="submit") хорошо, спасибо
-
-
-
         .modal__close(data-modal-close='')
           +inp-reset
-        .modal__return(data-modal-close='')
-          +arrow-left
+        
 
+    
 
 
 
