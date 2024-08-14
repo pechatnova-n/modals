@@ -1,6 +1,8 @@
-$foundry: 'Foundry Monoline OT3 W08';
+
 .modal {
   $comp: &;
+  $foundry: 'Foundry Monoline OT3 W08';
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -14,10 +16,378 @@ $foundry: 'Foundry Monoline OT3 W08';
   justify-content: center;
 
   overflow: hidden;
+  &__active {
+    display: block;
+  }
 
-  &__test {
+  &__content {
+    background-color: #FFF;
+    min-width: rem(320px);
+    max-width: rem(600px);
+    width: rem(600px);
+    min-height: rem(594px);
+    background-color: #FFF;
+    padding: rem(80px);
+    
+    @media #{media("<", t)} {
+      min-width: rem(320px);
+      max-width: rem(320px);
+      min-height: rem(359px);
+      width: rem(356px);
+      padding: rem(52px) rem(16px);
+    }
+  }
+  &__ic-success {
+    display: block;
+    margin: 0 auto 40px auto;
+    width: rem(100px);
+    height: rem(100px);
+    @media #{media("<", t)} {
+      width: rem(64px);
+      height: rem(64px);
+      margin: 0 auto 20px auto;
+    }
+  }
+  &__title {
+    font-size: rem(40px);
+    line-height: rem(44px);
+    letter-spacing: -4%;
+    color: #242424;
+    text-align: center;
+    font-family: $foundry;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: rem(40px);
+    &_success {
+      margin-bottom: 0;
+    }
+    @media #{media("<", t)} {
+      font-size: rem(20px);
+      line-height: rem(22px);
+      letter-spacing: -3%;
+      margin-bottom: rem(20px);
+      &_success {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__text {
+    font-size: rem(20px);
+    line-height: rem(28px);
+    text-align: center;
+    text-transform: none;
+    color: #242424;
+    font-family: $foundry;
+    font-weight: 500;
+    margin-top: rem(12px);
+    padding: 0 rem(15px);
+    &_padding {
+      padding: 0 rem(55px);
+    }
+    @media #{media("<", t)} {
+      font-size: rem(14px);
+      line-height: rem(19px);
+      margin-top: rem(8px);
+      padding: 0;
+      &_padding {
+        padding: 0 rem(40px);
+      }
+    }
+  }
+  &__bid {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: rem(20px);
+    font-size: rem(16px);
+    line-height: rem(22px);
+    font-weight: 800;
+    text-align: center;
+    color: #242424;
+    font-family: $foundry;
+    border: 1px solid #E0E0E0;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0 0 rem(5px) 0 rgba(36, 36, 36, 0.32);
+    }
+    @media #{media("<", t)} {
+      padding: rem(10px);
+      font-size: rem(14px);
+      line-height: rem(19px);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20px);
+    margin-bottom: rem(20px);
+    @media #{media("<", t)} {
+      row-gap: rem(12px);
+      margin-bottom: rem(8px);
+    }
+  }
+  &__item {
+    position: relative;
+  }
+  &__input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #E0E0E0;
+    width: 100%;
+    height: rem(62px);
+    box-shadow: inset 0 0 rem(20px) 0 rgba(0, 0, 0, 0.08);
+    padding: rem(29px) rem(50px) rem(11px) rem(20px);
+    font-size: rem(16px);
+    line-height: rem(22px);
+    letter-spacing: -1%;
+    color: #242424;
+    font-family: $foundry;
+    font-weight: 500;
+    @media #{media("<", t)} {
+      height: rem(44px);
+      padding: rem(22px) rem(30px) rem(7px) rem(12px);
+      font-size: rem(12px);
+      line-height: rem(16px);
+    }
+  }
+  &__label {
+    position: absolute;
+    top: rem(20px);
+    left: rem(20px);
+    font-size: rem(16px);
+    line-height: rem(22px);
+    letter-spacing: -1%;
+    color: #7F7F7F;
+    font-family: $foundry;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+    @media #{media("<", t)} {
+      top: rem(12px);
+      left: rem(12px);
+      font-size: rem(12px);
+      line-height: rem(16px);
+    }
+  }
+
+  #{$comp}__input:focus + #{$comp}__label,
+  #{$comp}__input:valid + #{$comp}__label {
+      top: rem(6px);
+      font-size: rem(13px);
+      line-height: rem(18px);
+      @media #{media("<", t)} {
+      top: rem(5px);
+      font-size: rem(10px);
+      line-height: rem(14px);
+    }
+  }
+
+  #{$comp}__input:focus ~ #{$comp}__inp-reset,
+  #{$comp}__input:valid ~ #{$comp}__inp-reset {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  #{$comp}__input:focus ~ #{$comp}__inp-show_active,
+  #{$comp}__input:valid ~ #{$comp}__inp-show_active {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: rem(62px);
+    padding: rem(10px);
+    font-size: rem(16px);
+    line-height: rem(22px);
+    letter-spacing: -1%;
+    background-color: #1D3C85;
+    color: #FFF;
+    font-family: $foundry;
+    font-weight: 800;
+    transition: opacity 0.3s ease-in-out;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+    &:hover {
+      opacity: 0.9;
+    }
+    &_alone {
+      margin-top: rem(40px);
+    }
+    @media #{media("<", t)} {
+      height: rem(44px);
+      font-size: rem(14px);
+      line-height: rem(19px);
+      padding: 0 rem(10px);
+      &_alone {
+        margin: rem(20px) auto 0 auto;
+        width: rem(177px);
+        height: rem(44px);
+      }
+    }
+  }
+  &__recover {
+    font-size: rem(16px);
+    line-height: rem(22px);
+    letter-spacing: -1%;
+    color: #1D3C85;
+    font-family: $foundry;
+    font-weight: 500;
+    cursor: pointer;
+    align-self: center;
+    transition: border 0.3s ease-in-out;
+    border-bottom: 1px solid currentColor;
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+  &__err-text {
+    align-self: center;
+    color: #DB2E27;
+    font-size: rem(16px);
+    line-height: rem(22px);
+    text-transform: none;
+    font-family: $foundry;
+    font-weight: 500;
+    @media #{media("<", t)} {
+      font-size: rem(14px);
+      line-height: rem(19px);
+    }
 
   }
+
+  &__star {
+    display: inline-block;
+    margin-left: 3px;
+    color: #000;
+    font-size: rem(16px);
+    line-height: rem(22px);
+    font-weight: 500;
+  }
+
+  &__inp-reset, &__inp-show {
+    display: flex;
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    transition: opacity 0.6s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    svg {
+      width: rem(20px);
+      height: rem(20px);
+    }
+    @media #{media("<", t)} {
+      top: rem(15px);
+      right: rem(15px);
+      svg {
+        width: rem(15px);
+        height: rem(15px);
+      }
+    }
+  }
+
+  &__inp-show {
+    transition: opacity 0.3s ease-in-out;
+    &_active {
+      opacity: 1;
+      pointer-events: visible;
+    }
+  }
+
+  &__about-code {
+    font-size: rem(16px);
+    line-height: rem(22px);
+    text-align: center;
+    text-transform: none;
+    color: #242424;
+    font-family: $foundry;
+    font-weight: 500;
+    @media #{media("<", t)} {
+      font-size: rem(12px);
+      line-height: rem(16px);
+    }
+  }
+  &__where-code {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: rem(14px);
+    line-height: rem(19px);
+    text-transform: uppercase;
+    color: #242424;
+    font-family: $foundry;
+    font-weight: 500;
+    padding: 0 rem(42px) 0 rem(16px);
+    border: 1px solid #E0E0E0;
+    height: rem(36px);
+    width: rem(179px);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: rem(16px);
+      width: rem(18px);
+      height: rem(18px);
+    }
+    &:hover {
+      box-shadow: 0 0 rem(5px) 0 rgba(36, 36, 36, 0.32);
+    }
+    @media #{media("<", t)} {
+      font-size: rem(10px);
+      line-height: rem(14px);
+      padding: 0 rem(40px) 0 rem(16px);
+      width: rem(142px);
+      height: rem(32px);
+    }
+  }
+  &__oferta {
+    font-size: rem(14px);
+    line-height: rem(19px);
+    text-transform: none;
+    color: #7F7F7F;
+    font-family: $foundry;
+    font-weight: 500;
+    @media #{media("<", t)} {
+      font-size: rem(10px);
+      line-height: rem(14px);
+    }
+  }
+  &__policy {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: rem(14px);
+    line-height: rem(19px);
+    text-transform: none;
+    color: #1D3C85;
+    font-family: $foundry;
+    font-weight: 500;
+    border-bottom: 1px solid currentColor;
+    transition: border 0.3s ease-in-out;
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+    @media #{media("<", t)} {
+      font-size: rem(10px);
+      line-height: rem(14px);
+      margin-left: rem(3px);
+    }
+  }
+
 
 
 
@@ -74,19 +444,16 @@ $foundry: 'Foundry Monoline OT3 W08';
 
   &__wrapper {
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;  
+    max-height: 95vh;
+    overflow-y: scroll;
+    @include scrollbar-hidden;
+    
+  
 
-    width: rem(950px);
-    @media #{media("<")} {
-      width: rem(560px);
-    }
-    @media #{media("<", m)} {
-      width: rem(335px);
-    }
-    background-color: #fff;
 
     &--response {
       padding: rem(104px) rem(32px);
@@ -103,21 +470,70 @@ $foundry: 'Foundry Monoline OT3 W08';
 
 
   &__close {
-    --size: #{rem(100px)};
     position: absolute;
-    right: 100%;
-    top: 0;
-    @media #{media("<")} {
-      --size: #{rem(40px)};
-    }
-    width: var(--size);
-    height: var(--size);
+    right: rem(20px);
+    top: rem(20px);
+    width: rem(40px);
+    height: rem(40px);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: #000;
     cursor: pointer;
+    border: 1px solid #E0E0E0;
+    transition: box-shadow 0.3s ease-in-out;
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+    }
+    svg * {
+      stroke: #242424;
+    }
+    &:hover {
+      box-shadow: 0 0 rem(5px) 0 rgba(36, 36, 36, 0.32);
+    }
+    @media #{media("<", t)} {
+      right: rem(12px);
+      top: rem(12px);
+      width: rem(32px);
+      height: rem(32px);
+      svg {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+  }
+  &__return {
+    position: absolute;
+    top: rem(20px);
+    left: rem(20px);
+    width: rem(40px);
+    height: rem(40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #E0E0E0;
+    transition: box-shadow 0.3s ease-in-out;
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+    }
+    svg * {
+      stroke: #242424;
+    }
+    &:hover {
+      box-shadow: 0 0 rem(5px) 0 rgba(36, 36, 36, 0.32);
+    }
+    @media #{media("<", t)} {
+      left: rem(12px);
+      top: rem(12px);
+      width: rem(32px);
+      height: rem(32px);
+      svg {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
   }
 
   &__svg {

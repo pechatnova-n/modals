@@ -1,0 +1,12 @@
+extends ../../layout/layout
+
+block variables
+  -
+    const pageName = 'modal1'
+    const pageTitle = 'modal1'
+
+block content
+  main
+    .inner
+      p Страница 1
+  +login-modal.modal__active

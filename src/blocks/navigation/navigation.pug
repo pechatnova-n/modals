@@ -1,0 +1,23 @@
+mixin navigation(mods)
+  -
+    const baseName = 'navigation'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .navigation(class=allMods)&attributes(attributes)
+    ul.navigation__list
+      li.navigation__item 
+        a.navigation__link(href="/modal1/index.html") Модальное окно 1
+      li.navigation__item 
+        a.navigation__link(href="/modal2") Модальное окно 2
+      li.navigation__item  
+        a.navigation__link(href="/modal3") Модальное окно 3
+      li.navigation__item 
+        a.navigation__link(href="/modal4") Модальное окно 4
+  
