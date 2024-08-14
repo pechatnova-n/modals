@@ -2,6 +2,7 @@
 .modal {
   $comp: &;
   $foundry: 'Foundry Monoline OT3 W08';
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -15,6 +16,9 @@
   justify-content: center;
 
   overflow: hidden;
+  &__active {
+    display: block;
+  }
 
   &__content {
     background-color: #FFF;
