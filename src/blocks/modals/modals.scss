@@ -17,18 +17,29 @@
     display: block;
   }
 
+  &__manage {
+    padding: rem(20px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
   &__content {
-    background-color: #FFF;
     min-width: rem(320px);
     max-width: rem(600px);
     width: rem(600px);
     min-height: rem(594px);
-    padding: rem(80px);
+    //padding: rem(80px);
     @media #{media("<", t)} {
       min-width: rem(320px);
       max-width: rem(320px);
       min-height: rem(359px);
       width: rem(356px);
+      padding: rem(52px) rem(16px);
+    }
+  }
+  &__content-item {
+    padding: 0 rem(80px) rem(80px) rem(80px);
+    @media #{media("<", t)} {
       padding: rem(52px) rem(16px);
     }
   }
@@ -440,6 +451,7 @@
     z-index: 1;
     max-height: 95vh;
     overflow-y: scroll;
+    background-color: #FFF;
     @include scrollbar-hidden;
 
 
@@ -460,9 +472,9 @@
 
 
   &__close {
-    position: absolute;
-    right: rem(20px);
-    top: rem(20px);
+    //position: sticky;
+    //right: rem(20px);
+    //top: rem(20px);
     width: rem(40px);
     height: rem(40px);
     display: flex;
@@ -482,8 +494,8 @@
       box-shadow: 0 0 rem(5px) 0 rgba(36, 36, 36, 0.32);
     }
     @media #{media("<", t)} {
-      right: rem(12px);
-      top: rem(12px);
+      //right: rem(12px);
+      //top: rem(12px);
       width: rem(32px);
       height: rem(32px);
       svg {
