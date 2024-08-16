@@ -34,14 +34,11 @@
     max-width: rem(600px);
     width: rem(600px);
     min-height: rem(594px);
-    //padding: rem(80px);
-    //padding: rem(60px) rem(80px) rem(80px) rem(80px);
     @media #{media("<", t)} {
       min-width: rem(320px);
       max-width: rem(320px);
       min-height: rem(359px);
       width: rem(356px);
-      //padding: 0 rem(16px) rem(52px) rem(16px);
     }
   }
   &__content-item {
