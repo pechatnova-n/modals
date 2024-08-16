@@ -1,43 +1,106 @@
-.input-ui {
+.input-form {
+  $comp: &;
+  $foundry: 'Foundry Monoline OT3 W08';
   position: relative;
-  width: 100%;
-  @include custom-placeholder;
-  overflow: hidden;
-  border-radius: rem(8px);
-
-  input {
+  &__input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #E0E0E0;
     width: 100%;
-    height: rem(60px);
-    caret-color: #62215b;
-    border: 1px solid var(--unnamed, #f0e7ef);
-    background: #f8f4f8;
-    transition: $transition;
-    color: var(--unnamed, #62215b);
+    height: rem(62px);
+    box-shadow: inset 0 0 rem(20px) 0 rgba(0, 0, 0, 0.08);
+    padding: rem(29px) rem(50px) rem(11px) rem(20px);
     font-size: rem(16px);
-    font-weight: 420;
-    line-height: 110%;
-    padding: rem(29px) rem(62px) rem(22px) rem(24px);
-    caret-width: 1px;
-
-    &::placeholder {
-      opacity: 0;
-    }
-
-    &:focus {
-      border: 1px solid var(--1, #62215b);
-      box-shadow: 0px rem(10px) rem(16px) rgba(0, 0, 0, 0.05);
+    line-height: rem(22px);
+    letter-spacing: -1%;
+    color: #242424;
+    font-family: $foundry;
+    font-weight: 500;
+    @media #{media("<", t)} {
+      height: rem(44px);
+      padding: rem(22px) rem(30px) rem(7px) rem(12px);
+      font-size: rem(12px);
+      line-height: rem(16px);
     }
   }
 
-  .parsley-errors-list {
-    margin-top: rem(6px);
-    color: #e62929;
-    font-size: rem(10px);
-    font-weight: 420;
-    line-height: 110%;
+  &__label {
+    position: absolute;
+    top: rem(20px);
+    left: rem(20px);
+    font-size: rem(16px);
+    line-height: rem(22px);
+    letter-spacing: -1%;
+    color: #7F7F7F;
+    font-family: $foundry;
     text-transform: uppercase;
-    @media #{media('<',d)} {
-      font-size: rem(8px);
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+    @media #{media("<", t)} {
+      top: rem(12px);
+      left: rem(12px);
+      font-size: rem(12px);
+      line-height: rem(16px);
     }
+  }
+  &__star {
+    display: inline-block;
+    margin-left: 3px;
+    color: #000;
+    font-size: rem(16px);
+    line-height: rem(22px);
+    font-weight: 500;
+  }
+  &__inp-reset, &__inp-show {
+    display: flex;
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    transition: opacity 0.6s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    svg {
+      width: rem(20px);
+      height: rem(20px);
+    }
+    @media #{media("<", t)} {
+      top: rem(15px);
+      right: rem(15px);
+      svg {
+        width: rem(15px);
+        height: rem(15px);
+      }
+    }
+  }
+  &__inp-show {
+    transition: opacity 0.3s ease-in-out;
+    &_active {
+      opacity: 1;
+      pointer-events: visible;
+    }
+  }
+
+
+
+  #{$comp}__input:focus + #{$comp}__label {
+    top: rem(6px);
+    font-size: rem(13px);
+    line-height: rem(18px);
+    @media #{media("<", t)} {
+      top: rem(5px);
+      font-size: rem(10px);
+      line-height: rem(14px);
+    }
+  }
+
+  #{$comp}__input:focus ~ #{$comp}__inp-reset {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  #{$comp}__input:focus ~ #{$comp}__inp-show_active {
+    opacity: 1;
+    pointer-events: visible;
   }
 }

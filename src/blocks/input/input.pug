@@ -1,7 +1,25 @@
-mixin input(name)
-  .input-ui.custom-placeholder(data-input-parent='')
-    input(data-input='' required name=name?name:'')&attributes(attributes)
-    .custom-placeholder__service
-      span
-        |#{attributes.placeholder}
-      +reset.custom-placeholder__reset
+mixin input(options = {})
+  .input-form
+    input.input-form__input#inp-tel(type=options.type, required=options.required)
+    label.input-form__label(for=options.id) !{options.text}
+      span.input-form__star *
+    span.input-form__inp-reset
+      +inp-reset
+
+
+      //+input({'id':'inp-tel', 'type':'tel, required', 'text':'телефон'}).input
+      //+input({ 'id': 'inp-passw', 'type': 'password, required', 'text': 'пароль' }).input
+
+    //if options.type === 'tel' || options.type === 'text'
+      span.input-form__inp-reset
+        +inp-reset
+    //else if options.type === 'password'
+      span.modal__inp-show.modal__inp-show_active
+        +inp-show
+
+    //else if(options.type === "password")
+      span.modal__inp-show.modal__inp-show_active
+        +inp-show
+    //else if(options.type === "password")
+      span.modal__inp-show
+        +inp-noshow

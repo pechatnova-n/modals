@@ -18,10 +18,16 @@
   }
 
   &__manage {
-    padding: rem(20px);
+    position: sticky;
+    top: rem(20px);
+    right: rem(20px);
+    padding: 0 rem(20px);
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    @media #{media("<", t)} {
+      padding: 0 rem(12px);
+    }
   }
   &__content {
     min-width: rem(320px);
@@ -29,18 +35,19 @@
     width: rem(600px);
     min-height: rem(594px);
     //padding: rem(80px);
+    //padding: rem(60px) rem(80px) rem(80px) rem(80px);
     @media #{media("<", t)} {
       min-width: rem(320px);
       max-width: rem(320px);
       min-height: rem(359px);
       width: rem(356px);
-      padding: rem(52px) rem(16px);
+      //padding: 0 rem(16px) rem(52px) rem(16px);
     }
   }
   &__content-item {
-    padding: 0 rem(80px) rem(80px) rem(80px);
+    padding: rem(60px) rem(80px) rem(80px) rem(80px);
     @media #{media("<", t)} {
-      padding: rem(52px) rem(16px);
+      padding: 0 rem(16px) rem(52px) rem(16px);
     }
   }
   &__ic-success {
@@ -133,6 +140,7 @@
   &__item {
     position: relative;
   }
+
   &__input {
     display: flex;
     align-items: center;
@@ -304,7 +312,6 @@
       pointer-events: visible;
     }
   }
-
   &__about-code {
     font-size: rem(16px);
     line-height: rem(22px);
@@ -472,9 +479,6 @@
 
 
   &__close {
-    //position: sticky;
-    //right: rem(20px);
-    //top: rem(20px);
     width: rem(40px);
     height: rem(40px);
     display: flex;
@@ -482,6 +486,7 @@
     justify-content: center;
     cursor: pointer;
     border: 1px solid #E0E0E0;
+    background-color: #fff;
     transition: box-shadow 0.3s ease-in-out;
     svg {
       width: rem(24px);
@@ -494,8 +499,6 @@
       box-shadow: 0 0 rem(5px) 0 rgba(36, 36, 36, 0.32);
     }
     @media #{media("<", t)} {
-      //right: rem(12px);
-      //top: rem(12px);
       width: rem(32px);
       height: rem(32px);
       svg {
@@ -505,9 +508,6 @@
     }
   }
   &__return {
-    position: absolute;
-    top: rem(20px);
-    left: rem(20px);
     width: rem(40px);
     height: rem(40px);
     display: flex;
@@ -515,6 +515,7 @@
     justify-content: center;
     cursor: pointer;
     border: 1px solid #E0E0E0;
+    background-color: #fff;
     transition: box-shadow 0.3s ease-in-out;
     svg {
       width: rem(24px);
