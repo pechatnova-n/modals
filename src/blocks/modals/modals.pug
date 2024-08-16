@@ -38,21 +38,8 @@ mixin login-modal
             header.modal__title кабинет дилера
               p.modal__text Для получения данных входа обратитесь к своему персональному менеджеру.
             form.modal__form
-              .modal__item
-                input.modal__input#inp-tel(type="tel", required)
-                label.modal__label(for="inp-tel") телефон
-                  span.modal__star *
-                span.modal__inp-reset
-                  +inp-reset
-
-              .modal__item
-                input.modal__input#inp-passw(type="password", required)
-                label.modal__label(for="inp-passw") пароль
-                  span.modal__star *
-                span.modal__inp-show.modal__inp-show_active
-                  +inp-show
-                span.modal__inp-show
-                  +inp-noshow
+              +input-tel
+              +input-password
               button.modal__submit(type="submit") войти
               a.modal__recover(href="#") Забыли пароль?
             a.modal__bid(href="#") заявка на дилерство
@@ -66,20 +53,8 @@ mixin login-modal
             header.modal__title кабинет дилера
               p.modal__text Для получения данных входа обратитесь к своему персональному менеджеру.
             form.modal__form
-              .modal__item
-                input.modal__input#inp-tel1(type="tel", required)
-                label.modal__label(for="inp-tel1") телефон
-                  span.modal__star *
-                span.modal__inp-reset
-                  +inp-reset
-              .modal__item
-                input.modal__input#inp-passw1(type="password", required)
-                label.modal__label(for="inp-passw1") пароль
-                  span.modal__star *
-                span.modal__inp-show.modal__inp-show_active
-                  +inp-show
-                span.modal__inp-show
-                  +inp-noshow
+              +input-tel
+              +input-password
               span.modal__err-text Неверный телефон или пароль
               button.modal__submit(type="submit") войти
               a.modal__recover(href="#") Забыли пароль?
@@ -102,12 +77,7 @@ mixin tel-modal
             header.modal__title Подтвердите номер телефона
               p.modal__text.modal__text_padding Сейчас вы получите код на номер + 7 981 ***-**-22
             form.modal__form
-              .modal__item
-                input.modal__input#inp-text(type="text", required)
-                label.modal__label(for="inp-text") код
-                  span.modal__star *
-                span.modal__inp-reset
-                  +inp-reset
+              +input-text
               button.modal__submit(type="submit") войти
               p.modal__about-code Отправим код повторно через 45 секунд
               span.modal__where-code не приходит код
@@ -121,12 +91,7 @@ mixin tel-modal
             header.modal__title Подтвердите номер телефона
               p.modal__text.modal__text_padding Сейчас вы получите код на номер + 7 981 ***-**-22
             form.modal__form
-              .modal__item
-                input.modal__input#inp-text(type="text", required)
-                label.modal__label(for="inp-text") код
-                  span.modal__star *
-                span.modal__inp-reset
-                  +inp-reset
+              +input-text
               button.modal__submit(type="submit") далее
               p.modal__about-code Отправим код повторно через 45 секунд
               span.modal__where-code не приходит код
@@ -148,12 +113,7 @@ mixin recover-password-modal
             header.modal__title Восстановление пароля
               p.modal__text Если вы забыли пароль, введите номер телефона
             form.modal__form
-              .modal__item
-                input.modal__input#inp-tel(type="tel", required)
-                label.modal__label(for="inp-tel") телефон
-                  span.modal__star *
-                span.modal__inp-reset
-                  +inp-reset
+              +input-tel
               button.modal__submit(type="submit") далее
               p.modal__oferta Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю
                 a.modal__policy(href="#") условия политики конфиденциальности.
@@ -166,12 +126,7 @@ mixin recover-password-modal
             header.modal__title Восстановление пароля
               p.modal__text Если вы забыли пароль, введите номер телефона
             form.modal__form
-              .modal__item
-                input.modal__input#inp-tel(type="tel", required)
-                label.modal__label(for="inp-tel") телефон
-                  span.modal__star *
-                span.modal__inp-reset
-                  +inp-reset
+              +input-tel
               span.modal__err-text Профиль пользователя не найден
               button.modal__submit(type="submit") далее
               p.modal__oferta Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю
@@ -185,22 +140,8 @@ mixin recover-password-modal
           .modal__content-item
             header.modal__title Восстановление пароля
             form.modal__form
-              .modal__item
-                input.modal__input#inp-passw(type="password", required)
-                label.modal__label(for="inp-passw") Новый пароль
-                  span.modal__star *
-                span.modal__inp-show.modal__inp-show_active
-                  +inp-show
-                span.modal__inp-show
-                  +inp-noshow
-              .modal__item
-                input.modal__input#inp-passw(type="password", required)
-                label.modal__label(for="inp-passw") Повторите новый пароль
-                  span.modal__star *
-                span.modal__inp-show.modal__inp-show_active
-                  +inp-show
-                span.modal__inp-show
-                  +inp-noshow
+              +input-tel
+              +input-password
               button.modal__submit(type="submit") изменить пароль
               p.modal__oferta Нажимая на кнопку «Отправить», я соглашаюсь на получение информации и уведомлений от интернет-сайта, а также принимаю
                 a.modal__policy(href="#") условия политики конфиденциальности.

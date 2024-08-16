@@ -1,0 +1,18 @@
+mixin input-text(mods)
+  -
+    const baseName = 'input-text'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .input-text(class=allMods)&attributes(attributes)
+    input.input-text__input#inp-text(type="text", required)
+    label.input-text__label(for="inp-text") код
+      span.input-text__star *
+    span.input-text__inp-reset
+      +inp-reset

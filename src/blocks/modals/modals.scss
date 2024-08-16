@@ -138,71 +138,6 @@
     position: relative;
   }
 
-  &__input {
-    display: flex;
-    align-items: center;
-    border: 1px solid #E0E0E0;
-    width: 100%;
-    height: rem(62px);
-    box-shadow: inset 0 0 rem(20px) 0 rgba(0, 0, 0, 0.08);
-    padding: rem(29px) rem(50px) rem(11px) rem(20px);
-    font-size: rem(16px);
-    line-height: rem(22px);
-    letter-spacing: -1%;
-    color: #242424;
-    font-family: $foundry;
-    font-weight: 500;
-    @media #{media("<", t)} {
-      height: rem(44px);
-      padding: rem(22px) rem(30px) rem(7px) rem(12px);
-      font-size: rem(12px);
-      line-height: rem(16px);
-    }
-  }
-  &__label {
-    position: absolute;
-    top: rem(20px);
-    left: rem(20px);
-    font-size: rem(16px);
-    line-height: rem(22px);
-    letter-spacing: -1%;
-    color: #7F7F7F;
-    font-family: $foundry;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: all 0.5s ease-in-out;
-    @media #{media("<", t)} {
-      top: rem(12px);
-      left: rem(12px);
-      font-size: rem(12px);
-      line-height: rem(16px);
-    }
-  }
-
-  #{$comp}__input:focus + #{$comp}__label,
-  #{$comp}__input:valid + #{$comp}__label {
-      top: rem(6px);
-      font-size: rem(13px);
-      line-height: rem(18px);
-      @media #{media("<", t)} {
-      top: rem(5px);
-      font-size: rem(10px);
-      line-height: rem(14px);
-    }
-  }
-
-  #{$comp}__input:focus ~ #{$comp}__inp-reset,
-  #{$comp}__input:valid ~ #{$comp}__inp-reset {
-    opacity: 1;
-    pointer-events: visible;
-  }
-
-  #{$comp}__input:focus ~ #{$comp}__inp-show_active,
-  #{$comp}__input:valid ~ #{$comp}__inp-show_active {
-    opacity: 1;
-    pointer-events: visible;
-  }
-
   &__submit {
     display: flex;
     align-items: center;
@@ -279,36 +214,6 @@
     font-weight: 500;
   }
 
-  &__inp-reset, &__inp-show {
-    display: flex;
-    position: absolute;
-    top: rem(20px);
-    right: rem(20px);
-    transition: opacity 0.6s ease-in-out;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    svg {
-      width: rem(20px);
-      height: rem(20px);
-    }
-    @media #{media("<", t)} {
-      top: rem(15px);
-      right: rem(15px);
-      svg {
-        width: rem(15px);
-        height: rem(15px);
-      }
-    }
-  }
-
-  &__inp-show {
-    transition: opacity 0.3s ease-in-out;
-    &_active {
-      opacity: 1;
-      pointer-events: visible;
-    }
-  }
   &__about-code {
     font-size: rem(16px);
     line-height: rem(22px);
@@ -392,13 +297,6 @@
       margin-left: rem(3px);
     }
   }
-
-
-
-
-
-
-
 
 
 
